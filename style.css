@@ -1,0 +1,180 @@
+body {
+  font-family: Arial;
+  margin: 0px;
+}
+
+ul {
+  list-style: none;
+  padding: 0px;
+}
+
+li {
+  margin-right: 30px;
+}
+
+footer {
+  display: flex;
+  justify-content: space-around;
+  background: darkkhaki;
+  padding: 3px;
+  border-radius: 5px 5px 0px 0px;
+  align-items: center;
+}
+
+#header {
+  z-index: 1;
+  position: sticky;
+  top: 0px;
+  display: flex;
+  background-color: orangered;
+  justify-content: space-between;
+  align-items: center;
+  border-radius: 0px 0px 5px 5px;
+}
+
+#logo {
+  max-width: 100px;
+  max-height: 100px;
+}
+
+#search {
+  margin-right: 50px;
+}
+
+#search input {
+  border: none;
+  padding: 3px;
+  border-radius: 3px;
+}
+
+#f__Logo {
+  max-width: 32px;
+}
+
+#country__region {
+  color: gray;
+  margin: 0;
+}
+
+#modal__paragraph {
+  padding: 10px;
+  grid-column-start: 1;
+  grid-column-end: 3;
+}
+
+.nav__item {
+  text-align: center;
+  padding: 2px;
+  background: chocolate;
+  cursor: pointer;
+  border: 1px dashed;
+}
+
+.countries__container {
+  z-index: 0;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-gap: 15px;
+  box-sizing: border-box;
+  background: #f4f4f4;
+  max-width: 1080px;
+  margin: auto;
+  padding: 10px;
+}
+
+.country {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  background-color: gainsboro;
+  max-width: 250px;
+  height: 320px;
+  border-radius: 10px;
+  justify-self: center;
+}
+
+img.flag {
+  height: 150px;
+  width: 100%;
+  border-radius: 10px 10px 3px 3px;
+}
+
+.more {
+  margin: 30px;
+}
+
+.btns {
+  background: chocolate;
+  padding: 7px;
+  font-size: 14px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.navbar {
+  display: flex;
+}
+
+.dropdown {
+  position: absolute;
+  padding-left: 0;
+}
+
+.info {
+  text-align: center;
+  grid-column-start: 1;
+  grid-column-end: 4;
+}
+
+.modal__container {
+  position: fixed;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  margin: auto;
+  padding-top: 100px;
+}
+
+.modal {
+  display: grid;
+  grid-template-columns: 2fr 1fr;
+  width: 70%;
+  margin: auto;
+  background: azure;
+  border-radius: 5px;
+}
+
+.modal img {
+  width: 80%;
+  margin-top: 10px;
+  margin-left: 10px;
+  border-radius: 5px;
+}
+
+.close {
+  align-items: center;
+  width: 70%;
+  grid-column-start: 2;
+  margin-bottom: 10px;
+}
+
+.hidden {
+  display: none;
+}
+
+.is__blurred {
+  filter: blur(2px);
+}
+
+.btns:hover {
+  background: darkorange;
+}
+.nav__item:hover {
+  background: darkorange;
+}
+.country:hover {
+  box-shadow: 0 0 10px goldenrod;
+}

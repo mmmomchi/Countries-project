@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="A little project about countries using third party API"
+    />
+    <link rel="stylesheet" href="style.css" />
+    <title>Countries</title>
+  </head>
+
+  <body>
+    <header id="header">
+      <img
+        id="logo"
+        src="/img/transparent-world-globe-flag-earth-logo-fetouh-yousef-technical-services-uae-directory-adv5e47587658e907.7518759115817340063642.png"
+      />
+
+      <ul class="navbar">
+        <li><button class="btns home__btn">Home</button></li>
+        <li>
+          <button class="region__btn btns">Region</button>
+          <ul class="dropdown hidden">
+            <li class="nav__item" data-name="europe">Europe</li>
+            <li class="nav__item" data-name="asia">Asia</li>
+            <li class="nav__item" data-name="americas">Americas</li>
+            <li class="nav__item" data-name="africa">Africa</li>
+            <li class="nav__item" data-name="oceania">Oceania</li>
+          </ul>
+        </li>
+        <li>
+          <button class="all__countries__btn btns">All Countries</button>
+        </li>
+        <li>
+          <button class="btns my__location">My Location</button>
+        </li>
+      </ul>
+
+      <form id="search">
+        <input
+          id="country__input"
+          type="text"
+          name="countryName"
+          placeholder="Enter Country"
+        />
+        <button id="country__search" class="btns">Search</button>
+      </form>
+    </header>
+
+    <main class="countries__container">
+      <div class="info">
+        <h3>Portfolio Project</h3>
+        <p>
+          This is a little project for my portfolio using a
+          <strong>REST API</strong> . You can choose between four methods of
+          loading Countries and information about them.
+        </p>
+        <h5>Region</h5>
+        <p>
+          The Region button opens a menu with five options. Every option will
+          load only the countries from it's region
+        </p>
+        <h5>All Countries</h5>
+        <p>
+          On click this button loads all the countries from the API's database.
+        </p>
+        <h5>My Location</h5>
+        <p>
+          The My Location button displays the country in which you are situated
+          right now.
+        </p>
+        <h5>Search Country</h5>
+        <p>You can also fill out the form to show a country you wish to see.</p>
+        <h5>Learn More</h5>
+        <p>
+          Once a country is loaded, you can click on the Learn More button. It
+          will display a modal window with information about the country.
+        </p>
+      </div>
+    </main>
+    <div class="modal__container hidden"></div>
+    <footer>
+      <ul>
+        Social Media:
+        <li>
+          <a href="https://www.facebook.com/momchil.dimitrov.7"
+            ><img
+              id="f__Logo"
+              src="/img/iconfinder_5365678_fb_facebook_facebook logo_icon.svg"
+              alt="facebook"
+          /></a>
+        </li>
+        <li>
+          <a href="https://www.instagram.com/mmmompeca/"
+            ><img
+              id="f__Logo"
+              src="/img/Instagram_logo_2016.svg.png"
+              alt="facebook"
+          /></a>
+        </li>
+      </ul>
+
+      <p class="copyright">&copy; Copyright by Momchil Dimitrov</p>
+    </footer>
+
+    <script src="script.js"></script>
+  </body>
+</html>
