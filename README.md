@@ -1,0 +1,3 @@
+# Country project
+
+This is a little project for my portfolio using a REST API. You can choose between four methods of loading countries and information about them. The Region button opens a menu with five options. Every option will load only the countries from it's region. Clicking On All Countries will load all countries from the API's database. My Location button displays the country in which you are situated right now. You can also fill out the form to view a desired country. Once a country is loaded, you can click on the Learn More button. It will display a modal window with information about the country.
