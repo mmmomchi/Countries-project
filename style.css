@@ -1,6 +1,10 @@
 body {
+  background: #91c781;
   font-family: Arial;
   margin: 0px;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
 }
 
 ul {
@@ -8,14 +12,14 @@ ul {
   padding: 0px;
 }
 
-li {
+.navbar li {
   margin-right: 30px;
 }
 
 footer {
   display: flex;
   justify-content: space-around;
-  background: darkkhaki;
+  background: #54afda;
   padding: 3px;
   border-radius: 5px 5px 0px 0px;
   align-items: center;
@@ -26,7 +30,7 @@ footer {
   position: sticky;
   top: 0px;
   display: flex;
-  background-color: orangered;
+  background-color: #8fc1e3;
   justify-content: space-between;
   align-items: center;
   border-radius: 0px 0px 5px 5px;
@@ -60,14 +64,16 @@ footer {
   padding: 10px;
   grid-column-start: 1;
   grid-column-end: 3;
+  border-top: solid 1px;
 }
 
 .nav__item {
   text-align: center;
   padding: 2px;
-  background: chocolate;
+  background: #5085a5;
   cursor: pointer;
-  border: 1px dashed;
+  border-bottom: 1px solid;
+  border-radius: 3px;
 }
 
 .countries__container {
@@ -75,11 +81,12 @@ footer {
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
   grid-gap: 15px;
-  box-sizing: border-box;
-  background: #f4f4f4;
+  background: #f7f9fb;
   max-width: 1080px;
+  /* height: 65vh; */
   margin: auto;
-  padding: 10px;
+  padding: 50px;
+  border-radius: 5px;
 }
 
 .country {
@@ -88,7 +95,7 @@ footer {
   align-items: center;
   justify-content: flex-start;
   background-color: gainsboro;
-  max-width: 250px;
+  width: 250px;
   height: 320px;
   border-radius: 10px;
   justify-self: center;
@@ -105,7 +112,7 @@ img.flag {
 }
 
 .btns {
-  background: chocolate;
+  background: #5085a5;
   padding: 7px;
   font-size: 14px;
   border: none;
@@ -143,7 +150,7 @@ img.flag {
   grid-template-columns: 2fr 1fr;
   width: 70%;
   margin: auto;
-  background: azure;
+  background: #a9cdea;
   border-radius: 5px;
 }
 
@@ -170,10 +177,10 @@ img.flag {
 }
 
 .btns:hover {
-  background: darkorange;
+  background: #f7f9fb;
 }
 .nav__item:hover {
-  background: darkorange;
+  background: #f7f9fb;
 }
 .country:hover {
   box-shadow: 0 0 10px goldenrod;
