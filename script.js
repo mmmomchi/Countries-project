@@ -174,7 +174,7 @@ myLocationBtn.addEventListener("click", function () {
   getCoords()
     .then((response) =>
       fetch(
-        `https://geocode.xyz/${response.coords.latitude},${response.coords.longitude}?geoit=json`
+        `https://api.bigdatacloud.net/data/reverse-geocode-client?latitude=${response.coords.latitude}&longitude=${response.coords.longitude}&localityLanguage=en`
       )
     )
     .then((response) => {
@@ -185,8 +185,9 @@ myLocationBtn.addEventListener("click", function () {
       return response.json();
     })
     .then((data) => {
+      console.log(data);
       countriesContainer.innerHTML = "";
-      renderCountries([data.country]);
+      renderCountries([data.countryName]);
     })
     .catch((err) => console.error(err));
 });
