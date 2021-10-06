@@ -16,7 +16,6 @@ function getRegionCountries(contiName) {
   fetch(`https://restcountries.com/v3.1/region/${contiName}`)
     .then((response) => response.json())
     .then((data) => {
-      console.log(data);
       // Make an array with the name of each country
       let countryNames = [];
       data.forEach(function (val) {
@@ -46,7 +45,6 @@ function getAllCountries() {
 
 function renderCountries(countryArr) {
   // Make the data compatiable with the API
-  console.log(countryArr);
   const fixedCountryArr = countryArr.map((val) => val.toLowerCase());
 
   //Get data for each country
@@ -133,10 +131,9 @@ regionBtn.addEventListener("click", function () {
 
 //Selecting and visualising region countries
 navContainer.addEventListener("click", function (e) {
-  const continentEl = e.target.closest(".nav__item");
-  if (e.target != continentEl) return;
+  if (!e.target.classList.contains("nav__item")) return;
 
-  getRegionCountries(continentEl.dataset.name);
+  getRegionCountries(e.target.dataset.name);
   dropDownRegions.classList.toggle("hidden");
 });
 
@@ -187,7 +184,6 @@ myLocationBtn.addEventListener("click", function () {
       return response.json();
     })
     .then((data) => {
-      console.log(data);
       countriesContainer.innerHTML = "";
       renderCountries([data.countryName]);
     })
