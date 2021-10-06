@@ -13,13 +13,14 @@ const myLocationBtn = document.querySelector(".my__location");
 /////FUNCTIONS/////
 function getRegionCountries(contiName) {
   // Get data from the API
-  fetch(`https://restcountries.eu/rest/v2/region/${contiName}`)
+  fetch(`https://restcountries.com/v3.1/region/${contiName}`)
     .then((response) => response.json())
     .then((data) => {
+      console.log(data);
       // Make an array with the name of each country
       let countryNames = [];
       data.forEach(function (val) {
-        countryNames.push(val.name);
+        countryNames.push(val.name.common);
       });
       // Render countries
       renderCountries(countryNames);
@@ -32,11 +33,11 @@ function getRegionCountries(contiName) {
 }
 
 function getAllCountries() {
-  fetch("https://restcountries.eu/rest/v2/all")
+  fetch("https://restcountries.com/v3.1/all")
     .then((response) => response.json())
     .then((data) => {
       let countriesArr = [];
-      data.forEach((country) => countriesArr.push(country.name));
+      data.forEach((country) => countriesArr.push(country.name.common));
       countriesContainer.innerHTML = `<h1 class="info">Showing all countries</h1> `;
       renderCountries(countriesArr);
     })
@@ -45,11 +46,12 @@ function getAllCountries() {
 
 function renderCountries(countryArr) {
   // Make the data compatiable with the API
+  console.log(countryArr);
   const fixedCountryArr = countryArr.map((val) => val.toLowerCase());
 
   //Get data for each country
   fixedCountryArr.forEach(function (countryName) {
-    fetch(`https://restcountries.eu/rest/v2/name/${countryName}`)
+    fetch(`https://restcountries.com/v3.1/name/${countryName}`)
       .then((response) => {
         if (!response.ok)
           throw new Error(`There is a problem with the REST API`);
@@ -58,10 +60,10 @@ function renderCountries(countryArr) {
       .then((data) => {
         let country = data[0];
         let html = `<div class="country">
-        <img class='flag' src="${country.flag}" alt="FLAG" />
-        <h2>${country.name}</h2>
+        <img class='flag' src="${country.flags.svg}" alt="FLAG" />
+        <h2>${country.name.common}</h2>
         <h5 id='country__region'>${country.region}</h5>
-       <button class='btns more' data-name='${country.name.toLowerCase()}' >learn more</button>
+       <button class='btns more' data-name='${country.name.common.toLowerCase()}' >learn more</button>
       </div>`;
 
         countriesContainer.insertAdjacentHTML("beforeend", html);
@@ -71,7 +73,7 @@ function renderCountries(countryArr) {
 }
 
 function renderPopup(countryName) {
-  fetch(`https://restcountries.eu/rest/v2/name/${countryName}`)
+  fetch(`https://restcountries.com/v3.1/name/${countryName}`)
     .then((response) => {
       if (!response.ok) throw new Error(`There is a problem with the REST API`);
       return response.json();
@@ -80,23 +82,23 @@ function renderPopup(countryName) {
       let countryInfo = data[0];
       let html = `
         <div class="modal">
-        <img  src="${countryInfo.flag}" alt="FLAG" />
+        <img  src="${countryInfo.flags.svg}" alt="FLAG" />
         <div class="country__data">
-      <h3 >${countryInfo.name}</h3>
+      <h3 >${countryInfo.name.common}</h3>
       <h4 cl>${countryInfo.region}</h4>
       <p><span>👫</span>${(+countryInfo.population / 1000000).toFixed(
         2
       )} million people</p>
-      <p><span>🗣️</span>${countryInfo.languages[0].name}</p>
-      <p><span>💰</span>${countryInfo.currencies[0].name}</p>
+      <p><span>🗣️</span>${Object.values(countryInfo.languages)}</p>
+      <p><span>💰</span>${Object.values(countryInfo.currencies)[0].name}</p>
     </div>
-    <p id='modal__paragraph'>${countryInfo.name} has a population of ${(
+    <p id='modal__paragraph'>${countryInfo.name.common} has a population of ${(
         +countryInfo.population / 1000000
       ).toFixed(2)} million people. It is situated in the ${
         countryInfo.region
       } region and it's capital city is ${
         countryInfo.capital
-      }. The main language is ${countryInfo.languages[0].name}.</p>
+      }. The main language is ${Object.values(countryInfo.languages)[0]}.</p>
         <button class='btns close'>Close</button>
         </div>`;
 
