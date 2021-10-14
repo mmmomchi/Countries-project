@@ -1,0 +1,31 @@
+#logo {
+  display: none;
+}
+
+#header {
+  flex-direction: column;
+}
+
+#search {
+  margin: 0;
+  padding-bottom: 10px;
+}
+
+.navbar li {
+  margin: 0 5px;
+}
+
+.countries__container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 30px;
+}
+
+.modal {
+  width: 100%;
+}
+
+.country {
+  width: 200px;
+}

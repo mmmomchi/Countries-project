@@ -13,7 +13,7 @@ ul {
 }
 
 .navbar li {
-  margin-right: 30px;
+  margin: 0 15px;
 }
 
 footer {
@@ -83,7 +83,6 @@ footer {
   grid-gap: 15px;
   background: #f7f9fb;
   max-width: 1080px;
-  /* height: 65vh; */
   margin: auto;
   padding: 50px;
   border-radius: 5px;
@@ -122,6 +121,7 @@ img.flag {
 
 .navbar {
   display: flex;
+  flex-wrap: wrap;
 }
 
 .dropdown {
